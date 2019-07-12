@@ -2,6 +2,8 @@
 
 The workflow (data cleaning and machine learning) can be found in the Jupyter notebook in the top directory. I used Google Colaboratory in order to utilize their free GPUs to speed up the fitting of the CNN, but all data I used were copied from the Walabot-Data directory to my Google Drive.
 
+![Video of each of the slices of the data cubes for the three objects in experiment](datacube.mp4)
+
 ### Executive summary:
 - We collected ~30 min of recording data of 2D image slices of a full .45 caliber ammo clip placed approximately 1 meter away from the Walabot recording device. This resulted in files of 10-20 MB with about 400 observations recorded. We repeated this experiment for an empty clip and also a control object. The data were recorded for all three on 6/19/2019 and 6/20/2019.
 - I reconstructed the 3D data cubes from the 2D data using the information regarding the slice location. The dimensions of these cubes were 101x91x12, corresponding to an R=np.arange(125,175+0.5,0.5), Phi=np.arange(-90,90+2,2), and Theta=np.arange(-45,45+5,5). Each slice is a random collection of the different slices for each theta. Assuming the experiment is static, this helps to represent the noise of the Walabot device in recording the same scene.
